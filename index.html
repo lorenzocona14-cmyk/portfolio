@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo Cona | Automation Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Habilita el modo oscuro manual
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#121212',
+                        surface: '#1E1E1E',
+                        accent: '#38bdf8', // Celeste claro
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar para el chat */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: #38bdf8;
+            border-radius: 10px;
+        }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-dark dark:text-gray-200 font-sans antialiased selection:bg-accent selection:text-dark transition-colors duration-300">
+
+    <nav class="fixed w-full bg-white/90 dark:bg-dark/90 backdrop-blur-sm border-b border-gray-200 dark:border-surface z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-xl font-bold text-gray-900 dark:text-white tracking-wider">L<span class="text-accent">C</span></span>
+                
+                <div class="flex items-center gap-6">
+                    <div class="hidden md:flex items-baseline space-x-8">
+                        <a href="#stack" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Stack</a>
+                        <a href="#proyectos" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Proyectos</a>
+                        <a href="#demo" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Demo Bot</a>
+                        <a href="#contacto" class="px-4 py-2 bg-accent text-dark font-semibold rounded-md hover:bg-sky-400 transition-colors">Contacto</a>
+                    </div>
+
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 transition-colors">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-col items-center text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 transition-colors">
+            Lorenzo Cona
+        </h1>
+        <h2 class="text-2xl md:text-3xl text-accent font-medium mb-8">
+            Automation Developer & Freelancer
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-10 transition-colors">
+            Transformo procesos manuales en flujos automáticos que ahorran tiempo y dinero. Especializado en arquitectura de bots, integración de APIs y desarrollo web.
+        </p>
+        <div class="flex gap-4">
+            <a href="#proyectos" class="px-8 py-3 bg-accent text-dark font-bold rounded-lg hover:bg-sky-400 transition-all shadow-[0_0_15px_rgba(56,189,248,0.3)] dark:shadow-[0_0_15px_rgba(56,189,248,0.4)]">
+                Ver Proyectos
+            </a>
+            <a href="#contacto" class="px-8 py-3 bg-white dark:bg-surface border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-bold rounded-lg hover:border-accent dark:hover:border-accent transition-all">
+                Hablemos
+            </a>
+        </div>
+    </section>
+
+    <section id="stack" class="py-20 bg-gray-100 dark:bg-surface transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-center transition-colors">Tecnologías y Herramientas</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+                
+                <div class="p-6 bg-white dark:bg-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-colors shadow-sm flex flex-col items-center justify-center gap-4">
+                    <img src="n8n-icon.png" alt="n8n logo" class="w-12 h-12 object-contain mx-auto">
+                    <p class="font-bold text-sm text-gray-800 dark:text-white">n8n</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-colors shadow-sm flex flex-col items-center justify-center gap-4">
+                    <img src="JS.png" alt="JavaScript logo" class="w-12 h-12 object-contain mx-auto">
+                    <p class="font-bold text-sm text-gray-800 dark:text-white">JavaScript</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-colors shadow-sm flex flex-col items-center justify-center gap-4">
+                    <img src="docker.png" alt="Docker logo" class="w-12 h-12 object-contain mx-auto">
+                    <p class="font-bold text-sm text-gray-800 dark:text-white">Docker</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-colors shadow-sm flex flex-col items-center justify-center gap-4">
+                    <svg class="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"/>
+                    </svg>
+                    <p class="font-bold text-sm text-gray-800 dark:text-white leading-tight">Integraciones de<br>APIs</p>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-dark rounded-xl border border-gray-200 dark:border-gray-800 hover:border-accent dark:hover:border-accent transition-colors shadow-sm flex flex-col items-center justify-center gap-4">
+                    <svg class="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" ry="2" />
+                        <path d="M2 8h20" />
+                        <path d="M6 12l2 2-2 2" />
+                        <path d="M10 16h4" />
+                    </svg>
+                    <p class="font-bold text-sm text-gray-800 dark:text-white leading-tight">Desarrollo web<br>(Frontend/Backend)</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center transition-colors">Proyectos Destacados</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all flex flex-col shadow-sm">
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">MatesAconcagua</h4>
+                        <p class="text-accent text-sm mb-4">E-commerce & Custom Chatbot</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                            Plataforma integral de comercio electrónico. Incluye la integración nativa de un widget de chat personalizado flotante en el sitio web para asistencia en tiempo real de los clientes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Web Dev</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Frontend JS</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                        <a href="#" class="text-accent hover:text-sky-500 dark:hover:text-white font-medium text-sm flex items-center transition-colors">
+                            Ver sitio en vivo →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all flex flex-col shadow-sm">
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Atencia Garage</h4>
+                        <p class="text-accent text-sm mb-4">WhatsApp Automation</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                            Bot de gestión de turnos automáticos para un lavadero de autos. Conectado a través de la API no oficial de ycloud para procesar solicitudes, mostrar precios y agendar reservas de forma fluida.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">n8n</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">ycloud API</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">JS</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                        <a href="#demo" class="text-accent hover:text-sky-500 dark:hover:text-white font-medium text-sm flex items-center transition-colors">
+                            Probar Demo Interactiva →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all flex flex-col shadow-sm">
+                    <div class="p-8 flex-grow">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">SplitPay</h4>
+                        <p class="text-accent text-sm mb-4">Aplicación Móvil</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                            Desarrollo de una app diseñada para dividir gastos entre grupos de manera exacta, integrando lógica compleja de pagos y transferencias para simplificar la administración financiera grupal.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">Mobile Dev</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">APIs Pago</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                        <a href="#" class="text-accent hover:text-sky-500 dark:hover:text-white font-medium text-sm flex items-center transition-colors">
+                            Ver detalles del caso →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="py-20 bg-gray-100 dark:bg-surface transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">Simulador de Automatización con IA</h3>
+                <p class="text-gray-600 dark:text-gray-400">Prueba chatear en tiempo real con el asistente virtual de Atencia Garage sin salir del portfolio.</p>
+            </div>
+
+            <div class="max-w-md mx-auto bg-gray-200 dark:bg-dark border-4 border-gray-300 dark:border-gray-800 rounded-[2.5rem] overflow-hidden shadow-2xl relative transition-colors duration-300" style="height: 600px;">
+                <div class="bg-[#075E54] p-4 flex items-center text-white gap-3 shadow-md z-10 relative">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold">AG</div>
+                    <div>
+                        <p class="font-bold leading-tight">Atencia Garage Bot</p>
+                        <p class="text-xs text-white/70">En línea (IA Activa)</p>
+                    </div>
+                </div>
+
+                <div id="chat-box" class="p-4 h-[420px] overflow-y-auto chat-scroll flex flex-col gap-3 bg-[url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')] bg-cover bg-center">
+                    <div class="bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300">
+                        ¡Hola! Bienvenido a Atencia Garage 🚗. ¿En qué puedo ayudarte hoy?
+                    </div>
+                </div>
+
+                <div class="absolute bottom-0 w-full bg-white/95 dark:bg-dark/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 p-3 transition-colors duration-300 flex gap-2 items-center">
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="flex-grow p-3 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-surface text-gray-900 dark:text-white focus:outline-none focus:border-accent text-sm" onkeypress="handleKeyPress(event)">
+                    <button onclick="sendChatMessage()" class="p-3 bg-accent text-dark rounded-full hover:bg-sky-400 transition-colors flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-20">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">¿Listo para optimizar tus procesos?</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-10">Ponte en contacto conmigo y analicemos cómo podemos automatizar las tareas repetitivas de tu negocio.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://wa.me/TUNUMERO" target="_blank" class="flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-bold rounded-lg hover:bg-[#20b858] transition-all">
+                    WhatsApp Directo
+                </a>
+                <a href="https://linkedin.com/in/TUPERFIL" target="_blank" class="flex items-center justify-center gap-2 px-8 py-4 bg-[#0A66C2] text-white font-bold rounded-lg hover:bg-[#08529c] transition-all">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 dark:bg-surface py-8 text-center text-sm text-gray-500 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <p>© 2026 Lorenzo Cona. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // --- LÓGICA MODO CLARO / OSCURO ---
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // --- NUEVA LÓGICA DEL CHATBOT CON IA ---
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        
+        // Historial de la conversación para enviarle a la IA
+        let conversationHistory = [];
+
+        function appendMessage(text, isUser) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = isUser 
+                ? "bg-accent text-white dark:text-dark font-medium p-3 rounded-tl-xl rounded-b-xl max-w-[85%] self-end text-sm shadow whitespace-pre-line"
+                : "bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow whitespace-pre-line transition-colors duration-300";
+            msgDiv.innerText = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+
+        async function sendChatMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            // Mostrar el mensaje del usuario
+            appendMessage(message, true);
+            chatInput.value = '';
+            chatInput.disabled = true; // Bloqueamos el input temporalmente
+
+            // Guardarlo en el historial
+            conversationHistory.push({ role: "user", content: message });
+
+            // Mostrar "Escribiendo..."
+            const typingDiv = document.createElement('div');
+            typingDiv.id = "typing-indicator";
+            typingDiv.className = "bg-white dark:bg-surface text-gray-500 p-3 rounded-tr-xl rounded-b-xl self-start text-xs italic shadow transition-colors duration-300 mt-2";
+            typingDiv.innerText = "Escribiendo...";
+            chatBox.appendChild(typingDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                // AQUÍ SE CONECTARÁ CON TU BACKEND EN VERCEL (api/chat.js)
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory })
+                });
+
+                const data = await response.json();
+                
+                // Quitamos el mensaje de "Escribiendo..."
+                document.getElementById('typing-indicator').remove();
+
+                if(response.ok && data.reply) {
+                    appendMessage(data.reply, false);
+                    conversationHistory.push({ role: "assistant", content: data.reply });
+                } else {
+                    appendMessage("Tuve un problema procesando tu respuesta. ¿Puedes intentarlo de nuevo? 🔧", false);
+                }
+
+            } catch (error) {
+                document.getElementById('typing-indicator')?.remove();
+                appendMessage("Error de conexión. Estoy fuera de servicio temporalmente o aún no se ha configurado el servidor Backend 🔧", false);
+                console.error("Error del bot:", error);
+            } finally {
+                chatInput.disabled = false;
+                chatInput.focus();
+            }
+        }
+    </script>
+</body>
+</html>
