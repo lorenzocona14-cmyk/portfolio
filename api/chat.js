@@ -23,14 +23,14 @@ export default async function handler(req, res) {
 
     try {
         // Hacemos la llamada a tu IA (Este formato sirve para OpenAI, OpenRouter, Groq, etc.)
-        const response = await fetch("URL_DE_TU_API_AQUI", { // Ej: https://api.openai.com/v1/chat/completions
+        const response = await fetch("https://openrouter.ai/api/v1", { // Ej: https://api.openai.com/v1/chat/completions
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${process.env.MI_API_KEY_SECRETA}`, // Tu key guardada en Vercel
+                "Authorization": `Bearer ${process.env.OPENROUTER_API_KEY}`, // Tu key guardada en Vercel
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "NOMBRE_DE_TU_MODELO", // Ej: gpt-3.5-turbo, o el que uses
+                model: "anthropic/claude-3.5-haiku", // Ej: gpt-3.5-turbo, o el que uses
                 messages: apiMessages,
                 temperature: 0.7,
                 max_tokens: 150 // Corto para ahorrar costos y ser rápido
