@@ -50,7 +50,7 @@
                     <div class="hidden md:flex items-baseline space-x-8">
                         <a href="#stack" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Stack</a>
                         <a href="#proyectos" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Proyectos</a>
-                        <a href="#demo" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Demo Bot</a>
+                        <a href="#demo" class="text-gray-600 dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors">Demo Bots</a>
                         <a href="#contacto" class="px-4 py-2 bg-accent text-dark font-semibold rounded-md hover:bg-sky-400 transition-colors">Contacto</a>
                     </div>
 
@@ -171,6 +171,26 @@
 
                 <div class="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all flex flex-col shadow-sm">
                     <div class="p-8 flex-grow">
+                        <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Chatbot Interactivo</h4>
+                        <p class="text-accent text-sm mb-4">Árboles de Decisión</p>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
+                            Modelo de asistente virtual basado en botones interactivos. Diseñado para embudos de ventas estructurados, calificación rápida de leads y soporte técnico de primer nivel sin necesidad de intervención humana.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">WhatsApp API</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">n8n</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-dark rounded text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700">UI/UX</span>
+                        </div>
+                    </div>
+                    <div class="p-6 border-t border-gray-100 dark:border-gray-800 mt-auto">
+                        <a href="#demo" class="text-accent hover:text-sky-500 dark:hover:text-white font-medium text-sm flex items-center transition-colors">
+                            Probar Demo Interactiva →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-surface rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-gray-400 dark:hover:border-gray-600 transition-all flex flex-col shadow-sm">
+                    <div class="p-8 flex-grow">
                         <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">B2B Scraper & Mailing</h4>
                         <p class="text-accent text-sm mb-4">Web Scraping & Email Automation</p>
                         <p class="text-gray-600 dark:text-gray-400 text-sm mb-6">
@@ -213,33 +233,59 @@
     </section>
 
     <section id="demo" class="py-20 bg-gray-100 dark:bg-surface transition-colors duration-300">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">Simulador de Automatización con IA</h3>
-                <p class="text-gray-600 dark:text-gray-400">Prueba chatear en tiempo real con el asistente virtual de Atencia Garage sin salir del portfolio.</p>
+                <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 transition-colors">Simulador de Automatización</h3>
+                <p class="text-gray-600 dark:text-gray-400">Prueba los diferentes modelos de asistentes virtuales que puedo construir para tu negocio.</p>
             </div>
 
-            <div class="max-w-md mx-auto bg-gray-200 dark:bg-dark border-4 border-gray-300 dark:border-gray-800 rounded-[2.5rem] overflow-hidden shadow-2xl relative transition-colors duration-300" style="height: 600px;">
-                <div class="bg-[#075E54] p-4 flex items-center text-white gap-3 shadow-md z-10 relative">
-                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold">AG</div>
-                    <div>
-                        <p class="font-bold leading-tight">Atencia Garage Bot</p>
-                        <p class="text-xs text-white/70">En línea (IA Activa)</p>
+            <div class="flex flex-col lg:flex-row gap-10 justify-center items-center">
+                
+                <div class="w-full max-w-md bg-gray-200 dark:bg-dark border-4 border-gray-300 dark:border-gray-800 rounded-[2.5rem] overflow-hidden shadow-2xl relative transition-colors duration-300" style="height: 600px;">
+                    <div class="bg-[#075E54] p-4 flex items-center text-white gap-3 shadow-md z-10 relative">
+                        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold">AG</div>
+                        <div>
+                            <p class="font-bold leading-tight">Atencia Garage Bot</p>
+                            <p class="text-xs text-white/70">En línea (IA Libre)</p>
+                        </div>
+                    </div>
+
+                    <div id="chat-box" class="p-4 h-[420px] overflow-y-auto chat-scroll flex flex-col gap-3 bg-[url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')] bg-cover bg-center">
+                        <div class="bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300">
+                            ¡Hola! Bienvenido a Atencia Garage 🚗. ¿En qué puedo ayudarte hoy?
+                        </div>
+                    </div>
+
+                    <div class="absolute bottom-0 w-full bg-white/95 dark:bg-dark/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 p-3 transition-colors duration-300 flex gap-2 items-center">
+                        <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="flex-grow p-3 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-surface text-gray-900 dark:text-white focus:outline-none focus:border-accent text-sm" onkeypress="handleKeyPress(event)">
+                        <button onclick="sendChatMessage()" class="p-3 bg-accent text-dark rounded-full hover:bg-sky-400 transition-colors flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        </button>
                     </div>
                 </div>
 
-                <div id="chat-box" class="p-4 h-[420px] overflow-y-auto chat-scroll flex flex-col gap-3 bg-[url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')] bg-cover bg-center">
-                    <div class="bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300">
-                        ¡Hola! Bienvenido a Atencia Garage 🚗. ¿En qué puedo ayudarte hoy?
+                <div class="w-full max-w-md bg-gray-200 dark:bg-dark border-4 border-gray-300 dark:border-gray-800 rounded-[2.5rem] overflow-hidden shadow-2xl relative transition-colors duration-300" style="height: 600px;">
+                    <div class="bg-[#007bff] p-4 flex items-center text-white gap-3 shadow-md z-10 relative">
+                        <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold text-xl">🤖</div>
+                        <div>
+                            <p class="font-bold leading-tight">Bot de Flujos</p>
+                            <p class="text-xs text-white/70">En línea (Menú Interactivo)</p>
+                        </div>
+                    </div>
+
+                    <div id="chat-body-botones" class="p-4 h-[510px] overflow-y-auto chat-scroll flex flex-col gap-3 bg-[url('https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg')] bg-cover bg-center">
+                        <div class="bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300">
+                            ¡Hola! Soy el asistente de modelos de flujo. ¿Qué solución de automatización estás buscando hoy?
+                        </div>
+                        
+                        <div class="flex flex-col gap-2 mt-2" id="chat-options-container">
+                            <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Generación de Leads')">Generación de Leads</button>
+                            <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Atención al Cliente')">Atención al Cliente</button>
+                            <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Turnos y Reservas')">Turnos y Reservas</button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="absolute bottom-0 w-full bg-white/95 dark:bg-dark/95 backdrop-blur border-t border-gray-200 dark:border-gray-800 p-3 transition-colors duration-300 flex gap-2 items-center">
-                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." class="flex-grow p-3 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-surface text-gray-900 dark:text-white focus:outline-none focus:border-accent text-sm" onkeypress="handleKeyPress(event)">
-                    <button onclick="sendChatMessage()" class="p-3 bg-accent text-dark rounded-full hover:bg-sky-400 transition-colors flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                    </button>
-                </div>
             </div>
         </div>
     </section>
@@ -300,11 +346,10 @@
             }
         });
 
-        // --- NUEVA LÓGICA DEL CHATBOT CON IA ---
+        // --- LÓGICA DEL BOT 1: ATENCIA GARAGE (IA LIBRE) ---
         const chatBox = document.getElementById('chat-box');
         const chatInput = document.getElementById('chat-input');
         
-        // Historial de la conversación para enviarle a la IA
         let conversationHistory = [];
 
         function appendMessage(text, isUser) {
@@ -327,15 +372,12 @@
             const message = chatInput.value.trim();
             if (!message) return;
 
-            // Mostrar el mensaje del usuario
             appendMessage(message, true);
             chatInput.value = '';
-            chatInput.disabled = true; // Bloqueamos el input temporalmente
+            chatInput.disabled = true;
 
-            // Guardarlo en el historial
             conversationHistory.push({ role: "user", content: message });
 
-            // Mostrar "Escribiendo..."
             const typingDiv = document.createElement('div');
             typingDiv.id = "typing-indicator";
             typingDiv.className = "bg-white dark:bg-surface text-gray-500 p-3 rounded-tr-xl rounded-b-xl self-start text-xs italic shadow transition-colors duration-300 mt-2";
@@ -344,7 +386,6 @@
             chatBox.scrollTop = chatBox.scrollHeight;
 
             try {
-                // AQUÍ SE CONECTARÁ CON TU BACKEND EN VERCEL (api/chat.js)
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -353,7 +394,6 @@
 
                 const data = await response.json();
                 
-                // Quitamos el mensaje de "Escribiendo..."
                 document.getElementById('typing-indicator').remove();
 
                 if(response.ok && data.reply) {
@@ -371,6 +411,73 @@
                 chatInput.disabled = false;
                 chatInput.focus();
             }
+        }
+
+        // --- LÓGICA DEL BOT 2: MODELO DE FLUJOS (INTERACTIVO) ---
+        function seleccionarOpcion(opcion) {
+            const chatBodyBotones = document.getElementById('chat-body-botones');
+            const optionsContainer = document.getElementById('chat-options-container');
+
+            // 1. Ocultar los botones
+            optionsContainer.style.display = 'none';
+
+            // 2. Imprimir mensaje del usuario
+            const userMsg = document.createElement('div');
+            userMsg.className = "bg-accent text-white dark:text-dark font-medium p-3 rounded-tl-xl rounded-b-xl max-w-[85%] self-end text-sm shadow whitespace-pre-line";
+            userMsg.innerText = opcion;
+            chatBodyBotones.appendChild(userMsg);
+            chatBodyBotones.scrollTop = chatBodyBotones.scrollHeight;
+
+            // 3. Mostrar "Escribiendo..."
+            const typingDiv = document.createElement('div');
+            typingDiv.id = "typing-botones";
+            typingDiv.className = "bg-white dark:bg-surface text-gray-500 p-3 rounded-tr-xl rounded-b-xl self-start text-xs italic shadow transition-colors duration-300 mt-2";
+            typingDiv.innerText = "Escribiendo...";
+            chatBodyBotones.appendChild(typingDiv);
+            chatBodyBotones.scrollTop = chatBodyBotones.scrollHeight;
+
+            // 4. Simular respuesta del bot después de 800ms
+            setTimeout(() => {
+                document.getElementById('typing-botones').remove();
+                
+                let respuestaBot = "";
+                if (opcion === 'Generación de Leads') {
+                    respuestaBot = "¡Perfecto! Un bot de Leads puede calificar a tus prospectos 24/7 y enviarlos directamente a tu CRM o mail.";
+                } else if (opcion === 'Atención al Cliente') {
+                    respuestaBot = "Excelente. Podemos integrar respuestas a preguntas frecuentes y derivar a un humano solo cuando sea necesario.";
+                } else if (opcion === 'Turnos y Reservas') {
+                    respuestaBot = "Genial. Conectamos el bot con tu Google Calendar para que tus clientes agenden solos sin superponer horarios.";
+                }
+
+                const botMsg = document.createElement('div');
+                botMsg.className = "bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300 mt-2";
+                botMsg.innerText = respuestaBot;
+                chatBodyBotones.appendChild(botMsg);
+
+                // Botón para reiniciar flujo
+                const resetContainer = document.createElement('div');
+                resetContainer.className = "flex flex-col gap-2 mt-4 items-start";
+                resetContainer.innerHTML = `<button class="bg-gray-200 dark:bg-dark border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 font-bold py-2 px-4 rounded-full transition-colors text-sm shadow-sm" onclick="resetBotones()">Empezar de nuevo 🔄</button>`;
+                chatBodyBotones.appendChild(resetContainer);
+                
+                chatBodyBotones.scrollTop = chatBodyBotones.scrollHeight;
+
+            }, 800);
+        }
+
+        function resetBotones() {
+            const chatBodyBotones = document.getElementById('chat-body-botones');
+            chatBodyBotones.innerHTML = `
+                <div class="bg-white dark:bg-surface text-gray-800 dark:text-gray-100 p-3 rounded-tr-xl rounded-b-xl max-w-[85%] self-start text-sm shadow transition-colors duration-300">
+                    ¡Hola! Soy el asistente de modelos de flujo. ¿Qué solución de automatización estás buscando hoy?
+                </div>
+                
+                <div class="flex flex-col gap-2 mt-2" id="chat-options-container">
+                    <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Generación de Leads')">Generación de Leads</button>
+                    <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Atención al Cliente')">Atención al Cliente</button>
+                    <button class="bg-white dark:bg-dark border border-accent text-accent hover:bg-accent hover:text-dark dark:hover:text-dark font-bold py-2 px-4 rounded-full transition-colors text-sm text-left shadow-sm" onclick="seleccionarOpcion('Turnos y Reservas')">Turnos y Reservas</button>
+                </div>
+            `;
         }
     </script>
 </body>
